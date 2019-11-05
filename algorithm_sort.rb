@@ -92,3 +92,56 @@ def sort(words)
 end
 
 sort(words)
+
+#Method for adding user words to array for sorting
+def add_to_array(user_words, array_to_add_to)
+  #storage arrays
+  comparison_array = []
+  user_word_array = []
+
+  #Turn user input into an array
+  user_word_array = user_words.split
+
+  #Downcase array we are adding to for easy comparison
+  array_to_add_to.each do |word|
+    comparison_array.push(word.downcase)
+  end
+
+  #Iterate through the user input and check for duplicate words
+  user_word_array.each do |word|
+    if comparison_array.include?(word.downcase)
+      puts "#{word} already present!"
+    else
+      array_to_add_to.push(word)
+      puts "#{word} added!"
+    end
+  end
+end
+
+#Method for checking if user wants to add additonal words
+def ask_for_input
+  puts "Would you like to add some words to be sorted?"
+  puts "1. Yes"
+  puts "2. No"
+
+  user_decision = gets.chomp.downcase
+
+  #Return true or false if user wants to input additional words
+  if user_decision == "yes" || user_decision == "1"
+    return true
+  else
+    return false
+  end
+end
+
+#Give user option to add words.  The methods can be called directly in the if statement
+if ask_for_input == true
+    puts "What words would you like to add"
+    user_inputted_words = gets.chomp
+    #Pass the user input and original array through method to add to original array
+    add_to_array(user_inputted_words, words)
+    #Calling Sorting Method
+    sort(words)
+else
+    puts "Thanks anyways!"
+end
