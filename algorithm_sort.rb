@@ -1,4 +1,4 @@
-# Sort words in an array using < || > alphabetically, a - z, using two arrays: unsorted and sorted.
+# Sort words in an array alphabetically using < or >, [/azAZ/], using two arrays: unsorted and sorted.
 require 'pry'
 # Array of words to sort
 words = ['treason', 'order', 'democracy', 'law', 'Congress', 'impeach', 'Senate', 'house', 'Republicans', 'democrats', 'court', 'press', 'reporting', 'alliance', 'defense', 'washington', 'constitution']
@@ -48,7 +48,7 @@ def the_sort(array, sorted_array, unsorted_array, capitalized_words)
 end
 
 # Allow user input to add words for sorting
-# Conrim it's only letters
+# Confirm it's only letters
 # Pass it into an array for sorting
 
 # Method to sort the words array
