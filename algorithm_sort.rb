@@ -1,5 +1,5 @@
 # Sort words in an array alphabetically using < or >, [/azAZ/], using two arrays: unsorted and sorted.
-require 'pry'
+
 # Array of words to sort
 words = ['treason', 'order', 'democracy', 'law', 'Congress', 'impeach', 'Senate', 'house', 'Republicans', 'democrats', 'court', 'press', 'reporting', 'alliance', 'defense', 'washington', 'constitution']
 
@@ -7,11 +7,6 @@ words = ['treason', 'order', 'democracy', 'law', 'Congress', 'impeach', 'Senate'
 def capitalized?(word)
   word == word.capitalize
 end
-
-# A method to check if user input word contains letters only
-# def letters?(word)
-#   word.match(/[A-Za-z]/) ? true : false
-# end
 
 # A method to sort an array of words
 def the_sort(array, sorted_array, unsorted_array, capitalized_words)
@@ -47,11 +42,7 @@ def the_sort(array, sorted_array, unsorted_array, capitalized_words)
   unsorted_array.delete_if { |word| word == low_word.at(0) }
 end
 
-# Allow user input to add words for sorting
-# Confirm it's only letters
-# Pass it into an array for sorting
-
-# Method to sort the words array
+# Execute this to sort and display results
 def sort(words)
   # Arrays for sorting
   sorted_array = []
@@ -90,8 +81,6 @@ def sort(words)
   puts capitalized_words.to_s
   puts ' '
 end
-
-sort(words)
 
 #Method for adding user words to array for sorting
 def add_to_array(user_words, array_to_add_to)
