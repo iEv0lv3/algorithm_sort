@@ -18,7 +18,7 @@ This is a small sorting program made in Ruby to help practice algorithmic thinki
 
 
 * **Add features**
-  * User input. Allow the user to add as many words to the sort as they would like
+  * ~~User input. Allow the user to add as many words to the sort as they would like~~
   * New types of sorting. Create Classes that will sort different data in unique ways
   * Update the output display. A better design for readability
   * Sort SQL data from PostgreSQL
