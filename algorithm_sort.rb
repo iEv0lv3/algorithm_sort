@@ -1,5 +1,5 @@
 # Sort words in an array alphabetically using < or >, [/azAZ/], using two arrays: unsorted and sorted.
-
+require 'pry'
 # Array of words to sort
 words = ['treason', 'order', 'democracy', 'law', 'Congress', 'impeach', 'Senate', 'house', 'Republicans', 'democrats', 'court', 'press', 'reporting', 'alliance', 'defense', 'washington', 'constitution']
 
@@ -42,12 +42,58 @@ def the_sort(array, sorted_array, unsorted_array, capitalized_words)
   unsorted_array.delete_if { |word| word == low_word.at(0) }
 end
 
+# Method for checking if user wants to add additonal words
+def ask_for_input(words)
+  user_words = []
+  puts "Would you like to add some words to be sorted?"
+  puts "1. Yes"
+  puts "2. No"
+
+  user_decision = gets.chomp
+
+  # If user wants to add words, enter a loop asking for words until empty input is provided
+    if user_decision == "yes" || user_decision == "1"
+      loop do
+        puts "What word would you like to add?"
+        input = gets.chomp
+
+          if input.empty? == true
+            puts "Thank you. Sorting..."
+            puts " "
+            break
+          elsif input.match?(/[^a-zA-Z]/) == true
+            puts "Please enter a valid word."
+            puts " "
+          elsif input.empty? == false
+            user_words << input
+            puts "Thank you. Word saved."
+            puts " "
+          end
+      end
+
+    elsif user_decision == "no" || user_decision == "2"
+      puts "Thanks anyways! On to the default sort..."
+      puts " "
+    else
+      puts "You seem to be confused about the options -_-"
+      puts "Moving on to the default sort..."
+    end
+
+    # Add user words into the words array. Checking for duplicates is handled by the sort.
+    user_words.each do |word|
+      words << word
+    end
+end
+
 # Execute this to sort and display results
 def sort(words)
   # Arrays for sorting
   sorted_array = []
   unsorted_array = []
   capitalized_words = []
+
+  # Get user input
+  ask_for_input(words)
 
   # Iterate through the words array first
   the_sort(words, sorted_array, unsorted_array, capitalized_words)
@@ -72,65 +118,17 @@ def sort(words)
 
   # Print the resulting output to the terminal
   puts ':: sorted_array ::'
-  puts sorted_array.to_s
+  puts '::::::::::::::::::'
+  puts sorted_array
   puts ' '
   puts ':: unsorted_array ::'
-  puts unsorted_array.to_s
+  puts '::::::::::::::::::::'
+  puts unsorted_array
   puts ' '
   puts ':: capitalized_words ::'
-  puts capitalized_words.to_s
+  puts ':::::::::::::::::::::::'
+  puts capitalized_words
   puts ' '
 end
 
-#Method for adding user words to array for sorting
-def add_to_array(user_words, array_to_add_to)
-  #storage arrays
-  comparison_array = []
-  user_word_array = []
-
-  #Turn user input into an array
-  user_word_array = user_words.split
-
-  #Downcase array we are adding to for easy comparison
-  array_to_add_to.each do |word|
-    comparison_array.push(word.downcase)
-  end
-
-  #Iterate through the user input and check for duplicate words
-  user_word_array.each do |word|
-    if comparison_array.include?(word.downcase)
-      puts "#{word} already present!"
-    else
-      array_to_add_to.push(word)
-      puts "#{word} added!"
-    end
-  end
-end
-
-#Method for checking if user wants to add additonal words
-def ask_for_input
-  puts "Would you like to add some words to be sorted?"
-  puts "1. Yes"
-  puts "2. No"
-
-  user_decision = gets.chomp.downcase
-
-  #Return true or false if user wants to input additional words
-  if user_decision == "yes" || user_decision == "1"
-    return true
-  else
-    return false
-  end
-end
-
-#Give user option to add words.  The methods can be called directly in the if statement
-if ask_for_input == true
-    puts "What words would you like to add"
-    user_inputted_words = gets.chomp
-    #Pass the user input and original array through method to add to original array
-    add_to_array(user_inputted_words, words)
-    #Calling Sorting Method
-    sort(words)
-else
-    puts "Thanks anyways!"
-end
+sort(words)
