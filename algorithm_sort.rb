@@ -1,5 +1,5 @@
 # Sort words in an array alphabetically using < or >, [/azAZ/], using two arrays: unsorted and sorted.
-require 'pry'
+
 # Array of words to sort
 words = ['treason', 'order', 'democracy', 'law', 'Congress', 'impeach', 'Senate', 'house', 'Republicans', 'democrats', 'court', 'press', 'reporting', 'alliance', 'defense', 'washington', 'constitution']
 
