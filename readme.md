@@ -17,7 +17,7 @@ This is a small sorting program made in Ruby to help practice algorithmic thinki
   * Switch to the `dev` branch
     * Using a development branch is common practice at many companies, and I would like to practice that process with you
   * Create a new branch, `git checkout -b <branch_name>` to develop and contribute your work
-  * When changes are ready create a pull request to merge your `branch_name` into the `dev` branch
+  * When your changes are ready, create a pull request to merge your `branch_name` into the `dev` branch
   * I will practice code review, discussion, and testing with your pull request
     * This is intentionally low stakes for us (contributors + me) to practice the process, and is based on positive reinforcement, empathy, and learning. Your contribution is **welcome** and **encouraged!**
     * Merge conflicts are our (contributors + me) primary focus
