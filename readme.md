@@ -16,14 +16,15 @@ This is a small sorting program made in Ruby to help practice algorithmic thinki
   * Fork & Clone the project
   * Switch to the `dev` branch
     * Using a development branch is common practice at many companies, and I would like to practice that process with you
-  * Create a new branch, `git checkout -b <branchname>` to develop and contribute your work
-  * When changes are ready create a pull request to merge your feature branch into the `dev` branch
+  * Create a new branch, `git checkout -b <branch_name>` to develop and contribute your work
+  * When changes are ready create a pull request to merge your `branch_name` into the `dev` branch
   * I will practice code review, discussion, and testing with your pull request
     * This is intentionally low stakes for us (contributors + me) to practice the process, and is based on positive reinforcement, empathy, and learning. Your contribution is **welcome** and **encouraged!**
     * Merge conflicts are our (contributors + me) primary focus
 
 
 **Add features**
+  * Refactor, always. If you find a cleaner and/or more DRY way to update the code base which doesn't break functionality, please contribute it!
   * ~~User input. Allow the user to add as many words to the sort as they would like~~
   * New types of sorting
   * Create Classes that sort different data in unique ways
