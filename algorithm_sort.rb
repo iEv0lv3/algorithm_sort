@@ -1,5 +1,5 @@
 # Sort words in an array alphabetically using < or >, [/azAZ/], using two arrays: unsorted and sorted.
-require 'pry'
+#require 'pry'
 # Array of words to sort
 words = ['treason', 'order', 'democracy', 'law', 'Congress', 'impeach', 'Senate', 'house', 'Republicans', 'democrats', 'court', 'press', 'reporting', 'alliance', 'defense', 'washington', 'constitution']
 
@@ -132,3 +132,30 @@ def sort(words)
 end
 
 sort(words)
+
+# sorts words in the array based on their length
+
+def sort_length(words)
+  # initializes the array that will store the ordered list of words
+  ordered_array = []
+  # initializes the hash used to store the words and their length
+  collection = {}
+
+  # maps each word to its length in the hash
+  words.each do |word|
+    collection[word] = word.length
+  end
+
+  while collection.empty? == false
+    # stores the length of the word in the hash with the minimum number of letters
+    temp = collection.values.min
+
+    # adds to the array the first encountered word in the hash with the minimum number of letters
+    ordered_array << collection.key(temp)
+    # deletes that word from the hash
+    collection.delete(collection.key(temp))
+  end
+  puts ordered_array
+end
+
+sort_length(words)
