@@ -6,7 +6,7 @@
 #              a Ruby implementation of the, ever useful, Bubble Sort algorithm.
 #
 #              Importantly, this works for an array of any data type. For strings, capitalized letters come first then lower case.
-#              Ruby treats comaprisons between letters by their ascii values. 
+#              Ruby treats comaprisons between letters by their ascii values. Meaning A = 65, B = 66 etc. and a = 97, b = 98 etc.
 #              More can be read here about how Ruby comapres strings: http://www.evc-cit.info/cit020/beginning-programming/chp_02/string_compare.html
 
 # Uses a class structure so that once new algorithms are written they can be implemented or used easily.
