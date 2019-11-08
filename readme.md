@@ -12,11 +12,13 @@ This is a small sorting program made in Ruby to help practice algorithmic thinki
 
 ### Things to do:
 
+For those learning Git branching such as myself: **[Helpful Git Commands List](https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html)**
+
 **Practice Git and GitHub workflows**
   * Fork & Clone the project
   * Switch to the `dev` branch
     * Using a development branch is common practice at many companies, and I would like to practice that process with you
-  * Create a new branch, `git checkout -b <branch_name>` to develop and contribute your work
+  * Create a new branch, `git checkout -b branch_name` to develop and contribute your work
   * When your changes are ready, create a pull request to merge your `branch_name` into the `dev` branch
   * I will practice code review, discussion, and testing with your pull request
     * This is intentionally low stakes for us (contributors + me) to practice the process, and is based on positive reinforcement, empathy, and learning. Your contribution is **welcome** and **encouraged!**
@@ -26,8 +28,10 @@ This is a small sorting program made in Ruby to help practice algorithmic thinki
 **Add features**
   * Refactor, always. If you find a cleaner and/or more DRY way to update the code base which doesn't break functionality, please contribute it!
   * ~~User input. Allow the user to add as many words to the sort as they would like~~
-  * New types of sorting
-  * Create Classes that sort different data in unique ways
+  * New types of sorting: groups, numbers, formulas?
+  * Create classes that sort different data in unique ways
+  * Add feature to read files for input data
+  * Add feature to save sort output to file
   * ~~Update the output display. A better design for readability~~
   * Sort SQL data from PostgreSQL
   * Create a Rails application that uses the Algorithm Sort logic
