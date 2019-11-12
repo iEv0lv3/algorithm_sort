@@ -1,8 +1,13 @@
 # Uses a class structure so that once new algorithms are written they can be implemented or used easily.
-class SortingAlg
+class Sorting
+  # Insertion Sort for numbers and anything that doesn't need a strict alphabetical sort.
+  def number_sort(array)
+    # TODO: Write sorting algorithm that can handle numbers and other data types that don't require 
+    #       strict alphabetical sorting.
+  end
 
   # Initialize the bubble sort by taking in an array(of any single type)
-  def bubble_sort(array)
+  def string_sort(array)
     # Gets the length of the passed in array for use as an end point for a loop later
     arr_length = array.length
 
@@ -38,8 +43,8 @@ words = ['treason', 'order', 'democracy', 'law', 'Congress', 'impeach', 'Senate'
          'democrats', 'court', 'press', 'reporting', 'alliance', 'defense', 'washington', 'constitution']
 
 # Initialized and created an object of the SortingAlg class for access to the bubble_sort method.
-sort_this = SortingAlg.new
+sort_this = Sorting.new
 
 # prints the unsorted then the sorted array.
 p words
-p sort_this.bubble_sort(words)
+p sort_this.string_sort(words)

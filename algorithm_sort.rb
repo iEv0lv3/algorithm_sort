@@ -1,12 +1,17 @@
-# Sort words in an array alphabetically using < or >, [/azAZ/], using two arrays: unsorted and sorted.
-
-# Array of words to sort
-words = ['treason', 'order', 'democracy', 'law', 'Congress', 'impeach', 'Senate', 'house', 'Republicans', 'democrats', 'court', 'press', 'reporting', 'alliance', 'defense', 'washington', 'constitution']
+# Adds the sorting algorithm class from another file for use in this file.
+require_relative "sorting_class"
+require_relative "word_processing"
 
 # A method to check for capitalization
 def capitalized?(word)
   word == word.capitalize
 end
+
+# Sort words in an array alphabetically using < or >, [/azAZ/], using two arrays: unsorted and sorted.
+
+# Array of words to sort
+words = ['treason', 'order', 'democracy', 'law', 'Congress', 'impeach', 'Senate', 'house', 'Republicans', 
+         'democrats', 'court', 'press', 'reporting', 'alliance', 'defense', 'washington', 'constitution']
 
 # A method to sort an array of words
 def the_sort(array, sorted_array, unsorted_array, capitalized_words)
@@ -132,3 +137,15 @@ def sort(words)
 end
 
 sort(words)
+
+# Initialized and created an object of the SortingAlg class for access to the bubble_sort method.
+sort_this = Sorting.new
+
+# prints the unsorted then the sorted array.
+puts ':: unsorted_array ::'
+puts '::::::::::::::::::::'
+p words
+
+puts ':: sorted_array ::'
+puts '::::::::::::::::::'
+p sort_this.string_sort(words)
