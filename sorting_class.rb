@@ -1,11 +1,5 @@
 # Uses a class structure so that once new algorithms are written they can be implemented or used easily.
 class Sorting
-  # Insertion Sort for numbers and anything that doesn't need a strict alphabetical sort.
-  def number_sort(array)
-    # TODO: Write sorting algorithm that can handle numbers and other data types that don't require 
-    #       strict alphabetical sorting.
-  end
-
   # Initialize the bubble sort by taking in an array(of any single type)
   def string_sort(array)
     # Gets the length of the passed in array for use as an end point for a loop later
@@ -34,6 +28,25 @@ class Sorting
       break if not swapped
     end
 
+    # Returns the array
+    array
+  end
+  # Uses the same bubble sort algorithm as the following algorithm to perform a sort on a non string array.
+  def number_sort(array)
+    arr_length = array.length
+
+    loop do
+      swapped = false
+
+      (arr_length - 1).times do |i|
+        if array[i] > array[i + 1]
+          array[i], array[i + 1] = array[i + 1], array[i]
+          swapped = true
+        end
+      end
+
+      break if not swapped
+    end
     array
   end
 

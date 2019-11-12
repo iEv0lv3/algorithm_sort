@@ -5,8 +5,10 @@ require_relative "word_processing"
 # Sort words in an array alphabetically using < or >, [/azAZ/], using two arrays: unsorted and sorted.
 
 # Array of words to sort
-words = ['treason', 'order', 'democracy', 'law', 'Congress', 'impeach', 'Senate', 'house', 'Republicans', 
-         'democrats', 'court', 'press', 'reporting', 'alliance', 'defense', 'washington', 'constitution']
+words = ["treason", "order", "democracy", "law", "Congress", "impeach", "Senate", "house", "Republicans", 
+         "democrats", "court", "press", "reporting", "alliance", "defense", "washington", "constitution"]
+
+numbers = [1, 2, 988, 345, 34563, 654356, 2345, 778, 965, 1234, 41341234, 778, 3, 2, 4, 6]
 
 # Method for checking if user wants to add additonal words
 def ask_for_input(words)
@@ -57,10 +59,18 @@ sort_this = Sorting.new
 sort_this.sort(words)
 
 # prints the unsorted then the sorted array.
-puts ':: unsorted_array ::'
-puts '::::::::::::::::::::'
+puts "\n:: unsorted_string ::"
+puts ":::::::::::::::::::::"
 p words
 
-puts ':: sorted_array ::'
-puts '::::::::::::::::::'
+puts "\n:: sorted_string ::"
+puts ":::::::::::::::::::"
 p sort_this.string_sort(words)
+
+puts "\n:: unsorted_numbers ::"
+puts "::::::::::::::::::::::"
+p numbers
+
+puts "\n:: sorted_numbers ::"
+puts "::::::::::::::::::::::"
+p sort_this.number_sort(numbers)
