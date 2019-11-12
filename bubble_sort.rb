@@ -1,14 +1,3 @@
-# FILE: bubble_sort.rb
-# Programmer: Steven Anderson
-# Last Modified: 8 November 2019
-# Description: A sorting algorithm that compares, from left to right, each element of the array and swaps the items so that
-#              smallest goes to largest. Based on a fimiliarity with many algorithms in the Java programming language, this is 
-#              a Ruby implementation of the, ever useful, Bubble Sort algorithm.
-#
-#              Importantly, this works for an array of any data type. For strings, capitalized letters come first then lower case.
-#              Ruby treats comaprisons between letters by their ascii values. Meaning A = 65, B = 66 etc. and a = 97, b = 98 etc.
-#              More can be read here about how Ruby comapres strings: http://www.evc-cit.info/cit020/beginning-programming/chp_02/string_compare.html
-
 # Uses a class structure so that once new algorithms are written they can be implemented or used easily.
 class SortingAlg
 
@@ -29,7 +18,7 @@ class SortingAlg
         # directly right of the current element.
         #     If the first looked at index is greater than the next index 1 larger, then the two positions are swapped with each other
         #     else they are left alone and the loop goes to position 1 and compares to 2, then 2 to 3, 3 to 4 etc.
-        if array[i] > array[i + 1]
+        if array[i].downcase > array[i + 1].downcase
           array[i], array[i + 1] = array[i + 1], array[i]
           swapped = true
         end
