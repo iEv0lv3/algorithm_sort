@@ -31,7 +31,8 @@ class Sorting
     # Returns the array
     array
   end
-  # Uses the same bubble sort algorithm as the following algorithm to perform a sort on a non string array.
+
+  # Uses the same bubble sort algorithm as the following algorithm to perform a sort on a non-string array.
   def number_sort(array)
     arr_length = array.length
 
