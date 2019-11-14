@@ -1,7 +1,7 @@
 # Sort words in an array alphabetically using < or >, [/azAZ/], using two arrays: unsorted and sorted.
-#require 'pry'
+
 # Array of words to sort
-words = ['treason', 'order', 'democracy', 'law', 'Congress', 'impeach', 'Senate', 'house', 'Republicans', 'democrats', 'court', 'press', 'reporting', 'alliance', 'defense', 'washington', 'constitution']
+words = ['atom', 'Sublime', 'vscode', 'vim', 'Jira', 'sql', 'Ruby', 'code', 'Turing', 'iTerm', 'zsh', 'Bear', 'Slack', 'notes', 'database', 'rails', 'kanban', 'Github']
 
 # A method to check for capitalization
 def capitalized?(word)
