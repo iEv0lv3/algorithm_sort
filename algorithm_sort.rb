@@ -42,6 +42,45 @@ def the_sort(array, sorted_array, unsorted_array, capitalized_words)
   unsorted_array.delete_if { |word| word == low_word.at(0) }
 end
 
+# sorts words in the array based on their length
+
+def sort_length(words)
+  # initializes the array that will store the ordered list of words
+  ordered_array = []
+  # initializes the hash used to store the words and their length
+  collection = {}
+
+  puts "Would you like to sort the words by length?"
+  puts "1. Yes"
+  puts "2. No"
+
+  user_decision = gets.chomp
+
+  if user_decision == '1' || user_decision == "yes"
+    # maps each word to its length in the hash
+    words.each do |word|
+      collection[word] = word.length
+    end
+
+    while collection.empty? == false
+      # stores the length of the word in the hash with the minimum number of letters
+      temp = collection.values.min
+
+      # adds to the array the first encountered word in the hash with the minimum number of letters
+      ordered_array << collection.key(temp)
+      # deletes that word from the hash
+      collection.delete(collection.key(temp))
+    end
+    puts ordered_array
+  elsif user_decision == '2' || user_decision == "no"
+    puts "On to the default sort..."
+  else
+    puts "You seem to be confused about the options -_-"
+    puts "Moving on to the default sort..."
+  end
+
+end
+
 # Method for checking if user wants to add additonal words
 def ask_for_input(words)
   user_words = []
@@ -95,6 +134,8 @@ def sort(words)
   # Get user input
   ask_for_input(words)
 
+  sort_length(words)
+
   # Iterate through the words array first
   the_sort(words, sorted_array, unsorted_array, capitalized_words)
 
@@ -131,4 +172,63 @@ def sort(words)
   puts ' '
 end
 
+# Uses a class structure so that once new algorithms are written they can be implemented or used easily.
+class Sorting
+  # Initialize the bubble sort by taking in an array(of any single type)
+  def string_sort(array)
+    # Gets the length of the passed in array for use as an end point for a loop later
+    arr_length = array.length
+
+    # initializes generic loop that will break if two portions of the unsorted array are not in their "swapped" state.
+    loop do
+      # initialize swapped to false for each element in the array
+      swapped = false
+
+      # Begins an embedded loop set to the arrays length - 1 due to arrays starting at 0, so that the loop doesn't overshoot
+      # the array at the end.
+      (arr_length - 1).times do |i|
+        # Checks the array element, starting with positions 0 and compares it to the element at index one larger, or the one
+        # directly right of the current element.
+        #     If the first looked at index is greater than the next index 1 larger, then the two positions are swapped with each other
+        #     else they are left alone and the loop goes to position 1 and compares to 2, then 2 to 3, 3 to 4 etc.
+        if array[i].downcase > array[i + 1].downcase
+          array[i], array[i + 1] = array[i + 1], array[i]
+          swapped = true
+        end
+      end
+
+      # The generic loop doesn't have a built in stopping point, so once the inner loop is completed, if swapped is ever not
+      # equal to false then it breaks the loop and returns the array, sorted at this point.
+      break if not swapped
+    end
+
+    # Returns the array
+    array
+  end
+
+  # Uses the same bubble sort algorithm as the following algorithm to perform a sort on a non-string array.
+  def number_sort(array)
+    arr_length = array.length
+
+    loop do
+      swapped = false
+
+      (arr_length - 1).times do |i|
+        if array[i] > array[i + 1]
+          array[i], array[i + 1] = array[i + 1], array[i]
+          swapped = true
+        end
+      end
+
+      break if not swapped
+    end
+    array
+  end
+end
+
+sort_this = Sorting.new
+
 sort(words)
+
+puts "Sorting using string_sort method:"
+p sort_this.string_sort(words)
